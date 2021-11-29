@@ -48,7 +48,10 @@ public class Student {
     }
 
     public Student(Long studentId,String voornaam, String achternaam, String klas, String email){
-
-
+        this.studentId = studentId;
+        this.voornaam = voornaam;
+        this.achternaam = achternaam;
+        this.klas = klas;
+        this.email = email;
 }
 }
