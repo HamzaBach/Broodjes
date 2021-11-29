@@ -56,4 +56,10 @@ public class Openingsuur {
         this.dag = dag;
         this.dagenTotLevering = dagenTotLevering;
     }
+    public Openingsuur(LocalTime openingsVan, LocalTime openingTot, DayOfWeek dag, int dagenTotLevering) {
+        this.openingVan = openingsVan;
+        this.openingTot = openingTot;
+        this.dag = dag;
+        this.dagenTotLevering = dagenTotLevering;
+    }
 }

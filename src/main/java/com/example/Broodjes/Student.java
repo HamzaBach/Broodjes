@@ -54,4 +54,10 @@ public class Student {
         this.klas = klas;
         this.email = email;
 }
+    public Student(String voornaam, String achternaam, String klas, String email){
+        this.voornaam = voornaam;
+        this.achternaam = achternaam;
+        this.klas = klas;
+        this.email = email;
+    }
 }
