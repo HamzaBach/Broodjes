@@ -37,6 +37,18 @@ public class Bestelling {
 
     }
 
+    public Bestelling( Long broodjeId, Long studentId, LocalDate bestelling, double prijs, boolean betaald, LocalDate leverdatum)
+    {
+
+        this.broodjeId = broodjeId;
+        this.studentId = studentId;
+        this.bestelling = bestelling;
+        this.prijs = prijs;
+        this.betaald = betaald;
+        this.leverdatum = leverdatum;
+
+    }
+
     public Long getBestelId() {
         return bestelId;
     }
