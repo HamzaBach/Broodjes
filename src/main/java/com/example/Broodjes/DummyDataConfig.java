@@ -1,3 +1,4 @@
+/*
 package com.example.Broodjes;
 
 import org.springframework.boot.CommandLineRunner;
@@ -21,6 +22,9 @@ return args ->
     Broodje broodje3 = new Broodje("Gezond",3.99);
     broodjeRepository.save(broodje3);
 
+    Student Sebastiaan = new Student("Sebastiaan", "Beerten", "6IB", "a@b.com");
+    studentRepository.save(Sebastiaan);
+
     Bestelling bestelling1 = new Bestelling(1L, 1L, LocalDate.of(1982, Month.SEPTEMBER, 9), 1.50, true, LocalDate.of(1982, Month.SEPTEMBER, 9));
     bestellingRepository.save(bestelling1);
     Bestelling bestelling2 = new Bestelling(1L, 1L, LocalDate.of(1982, Month.SEPTEMBER, 9), 1.50, true, LocalDate.of(1982, Month.SEPTEMBER, 9));
@@ -28,9 +32,9 @@ return args ->
     Bestelling bestelling3 = new Bestelling(1L, 1L, LocalDate.of(1982, Month.SEPTEMBER, 9), 1.50, true, LocalDate.of(1982, Month.SEPTEMBER, 9));
     bestellingRepository.save(bestelling3);
 
-    Student Sebastiaan = new Student("Sebastiaan", "Beerten", "6IB", "a@b.com");
-    studentRepository.save(Sebastiaan);
+
 
 };
 }
 }
+*/

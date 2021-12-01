@@ -1,5 +1,7 @@
 package com.example.Broodjes;
 
+import org.aspectj.apache.bcel.classfile.Module;
+
 import javax.persistence.*;
 import java.time.DayOfWeek;
 import java.time.LocalTime;
@@ -62,4 +64,6 @@ public class Openingsuur {
         this.dag = dag;
         this.dagenTotLevering = dagenTotLevering;
     }
+
+    public Openingsuur(){};
 }

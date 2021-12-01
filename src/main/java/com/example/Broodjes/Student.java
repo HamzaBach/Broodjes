@@ -60,4 +60,7 @@ public class Student {
         this.klas = klas;
         this.email = email;
     }
+
+    public Student() {
+    }
 }
