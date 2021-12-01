@@ -12,7 +12,15 @@ import java.util.List;
 
 public class BestellingController {
 
+    private final BestellingService bestellingService;
 
+    @Autowired
+    public BestellingController (BestellingService bestellingService){
+        this.bestellingService=bestellingService;
+    }
+
+    @GetMapping
+    public List<Bestelling> getBestelling(){return bestellingService.getBestelling();}
 
 
 
