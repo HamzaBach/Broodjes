@@ -1,9 +1,7 @@
 package com.example.Broodjes;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,6 +20,10 @@ public class BestellingController {
     @GetMapping
     public List<Bestelling> getBestelling(){return bestellingService.getBestelling();}
 
+    @PostMapping
+    public void registerNewBestelling(@RequestBody Bestelling bestelling){
+        bestellingService.addBestelling(bestelling);
+    }
 
 
 }

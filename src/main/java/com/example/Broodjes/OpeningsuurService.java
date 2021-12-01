@@ -22,10 +22,10 @@ public class OpeningsuurService {
     public List<Openingsuur> getOpeningsUren(){
         return openingsuurRepository.findAll();
     }
-
+/*
     //Openingsuren voor de huidige dag oproepen
-   /* public Optional<Openingsuur> getOpeningsUrenVandaag(String dag){
+   public Optional<Openingsuur> getOpeningsUrenVandaag(String dag){
         return openingsuurRepository.OpeningsUrenVandaag(dag);
-    }*/
-
+    }
+*/
 }
