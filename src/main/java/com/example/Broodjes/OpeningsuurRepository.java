@@ -10,8 +10,8 @@ public interface OpeningsuurRepository extends JpaRepository<Openingsuur, Long> 
 
 //Query openingsuren huidige dag oproepen aanmaken
 
-    @Query("SELECT * FROM Openingsuur WHERE dag = ?1")
-    Optional<Openingsuur> OpeningsUrenVandaag(String dag);
+    /*@Query("SELECT * FROM Openingsuur WHERE dag = ?1")
+    Optional<Openingsuur> OpeningsUrenVandaag(String dag);*/
 
 
 }

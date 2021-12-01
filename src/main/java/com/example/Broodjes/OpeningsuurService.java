@@ -24,8 +24,8 @@ public class OpeningsuurService {
     }
 
     //Openingsuren voor de huidige dag oproepen
-    public Optional<Openingsuur> getOpeningsUrenVandaag(String dag){
+   /* public Optional<Openingsuur> getOpeningsUrenVandaag(String dag){
         return openingsuurRepository.OpeningsUrenVandaag(dag);
-    }
+    }*/
 
 }

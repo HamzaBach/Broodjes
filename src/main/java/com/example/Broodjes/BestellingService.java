@@ -10,8 +10,8 @@ public class BestellingService {
 
         private final BestellingRepository bestellingRepository;
         @Autowired
-        public BestellingService(BestellingService bestellingService){
-            this.bestellingRepository= bestellingService.bestellingRepository;
+        public BestellingService(BestellingRepository bestellingRepository){
+            this.bestellingRepository= bestellingRepository;
         }
         public List<Bestelling> getBestelling(){
             return this.bestellingRepository.findAll();
