@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class BroodjeConfig {
-@Bean
+@Bean("BroodjeConfig")
 CommandLineRunner commandLineRunner (BroodjeRepository broodjeRepository){
 return args ->
 {

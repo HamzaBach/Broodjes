@@ -9,7 +9,7 @@ import java.time.Month;
 
 @Configuration
 public class StudentConfig {
-    @Bean
+    @Bean("StudentConfig")
     CommandLineRunner commandLineRunner(StudentRepository repository) {
 
 

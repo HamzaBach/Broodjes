@@ -10,7 +10,7 @@ import java.time.Month;
 
 @Configuration
     public class BestellingConfig {
-    @Bean
+    @Bean("BestellingConfig")
     CommandLineRunner commandLineRunner(BestellingRepository bestellingRepository) {
         return args ->
         {
