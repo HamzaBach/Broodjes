@@ -37,6 +37,8 @@ public class Bestelling {
 
     }
 
+    public Bestelling(){};
+
     public Bestelling( Long broodjeId, Long studentId, LocalDate bestelling, double prijs, boolean betaald, LocalDate leverdatum)
     {
 

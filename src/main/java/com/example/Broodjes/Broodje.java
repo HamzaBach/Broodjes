@@ -24,6 +24,8 @@ private Double price;
         this.price = price;
     }
 
+    public Broodje(){};
+
     public Long getBroodjeId() {
         return broodjeId;
     }
