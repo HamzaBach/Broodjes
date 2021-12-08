@@ -25,9 +25,9 @@ public class BestellingController {
         return bestellingService.getBestellingStudent(studentId);
     }
 
-    @PostMapping(path = "{studentId}")
-    public void addBestelling(@RequestBody Bestelling bestelling){
-        bestellingService.addBestelling(bestelling);
+    @PostMapping(path = "{studentId}/{broodjeId}")
+    public void addBestelling(@PathVariable("studentId") Long studentId, @PathVariable("broodjeId")Long broodjeId ){
+        bestellingService.addBestelling(studentId, broodjeId);
     }
 
 
