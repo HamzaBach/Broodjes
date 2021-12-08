@@ -17,11 +17,16 @@ public class BestellingController {
         this.bestellingService=bestellingService;
     }
 
-    @GetMapping
+    @GetMapping//voor de persoon achter de kassa
     public List<Bestelling> getBestelling(){return bestellingService.getBestelling();}
 
-    @PostMapping
-    public void registerNewBestelling(@RequestBody Bestelling bestelling){
+    @GetMapping(path = "{studentId}")
+    public List<Bestelling> getBestellingStudent(@PathVariable("studentId") Long studentId){
+        return bestellingService.getBestellingStudent(studentId);
+    }
+
+    @PostMapping(path = "{studentId}")
+    public void addBestelling(@RequestBody Bestelling bestelling){
         bestellingService.addBestelling(bestelling);
     }
 

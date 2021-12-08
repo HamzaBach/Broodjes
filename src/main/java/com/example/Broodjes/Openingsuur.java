@@ -17,13 +17,13 @@ public class Openingsuur {
     private Long openingsuurId;
     private LocalTime openingVan;
     private LocalTime openingTot;
-    private DayOfWeek dag;
+    private int dag;
     private int dagenTotLevering;
 
-    public DayOfWeek getDag() {
+    public int getDag() {
         return dag;
     }
-    public void setDag(DayOfWeek dag) {
+    public void setDag(int dag) {
         this.dag = dag;
     }
     public Long getOpeningsuurId() {
@@ -51,19 +51,19 @@ public class Openingsuur {
         this.dagenTotLevering = dagenTotLevering;
     }
 
-    public Openingsuur(Long openingsuurId, LocalTime openingsVan, LocalTime openingTot, DayOfWeek dag, int dagenTotLevering) {
+    public Openingsuur(Long openingsuurId, LocalTime openingsVan, LocalTime openingTot, int dag, int dagenTotLevering) {
         this.openingsuurId = openingsuurId;
         this.openingVan = openingsVan;
         this.openingTot = openingTot;
         this.dag = dag;
         this.dagenTotLevering = dagenTotLevering;
     }
-    public Openingsuur(LocalTime openingsVan, LocalTime openingTot, DayOfWeek dag, int dagenTotLevering) {
+    public Openingsuur(LocalTime openingsVan, LocalTime openingTot, int dag, int dagenTotLevering) {
         this.openingVan = openingsVan;
         this.openingTot = openingTot;
         this.dag = dag;
         this.dagenTotLevering = dagenTotLevering;
     }
 
-    public Openingsuur(){};
+    public Openingsuur(){}
 }
