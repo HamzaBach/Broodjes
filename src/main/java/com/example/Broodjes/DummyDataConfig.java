@@ -25,6 +25,10 @@
 //
 //    Student Sebastiaan = new Student("Sebastiaan", "Beerten", "6IB", "a@b.com");
 //    studentRepository.save(Sebastiaan);
+//    Student Johan = new Student("Johan", "Lamfers", "4IB", "j@b.com");
+//    studentRepository.save(Johan);
+//    Student Hamza = new Student("Hamza", "Bachiri", "4IB", "h@b.com");
+//    studentRepository.save(Hamza);
 //
 //
 //    Openingsuur openingsuur1 = new Openingsuur(LocalTime.of(00,00,00),
@@ -63,11 +67,11 @@
 //
 //
 //
-//Bestelling bestelling1 = new Bestelling(1L, 1L, LocalDate.of(1982, Month.SEPTEMBER, 9), 1.50, true, LocalDate.of(1982, Month.SEPTEMBER, 9));
+//Bestelling bestelling1 = new Bestelling(1L, 1L, LocalDate.of(2021, Month.DECEMBER, 7), 3.50, false, LocalDate.of(2021, Month.DECEMBER, 7));
 //    bestellingRepository.save(bestelling1);
-//    Bestelling bestelling2 = new Bestelling(1L, 1L, LocalDate.of(1982, Month.SEPTEMBER, 9), 1.50, true, LocalDate.of(1982, Month.SEPTEMBER, 9));
+//    Bestelling bestelling2 = new Bestelling(2L, 2L, LocalDate.of(2021, Month.DECEMBER, 7), 2.50, false, LocalDate.of(2021, Month.DECEMBER, 8));
 //    bestellingRepository.save(bestelling2);
-//    Bestelling bestelling3 = new Bestelling(1L, 1L, LocalDate.of(1982, Month.SEPTEMBER, 9), 1.50, true, LocalDate.of(1982, Month.SEPTEMBER, 9));
+//    Bestelling bestelling3 = new Bestelling(3L, 3L, LocalDate.of(2021, Month.DECEMBER, 7), 3.99, false, LocalDate.of(1982, Month.SEPTEMBER, 8));
 //    bestellingRepository.save(bestelling3);
 //
 //

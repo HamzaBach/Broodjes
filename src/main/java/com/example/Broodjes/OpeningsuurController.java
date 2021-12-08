@@ -22,4 +22,6 @@ public class OpeningsuurController {
     public List<Openingsuur> getOpeningsuren(){
         return openingsuurService.getOpeningsUren();
     }
+
+
 }

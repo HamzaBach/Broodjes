@@ -2,16 +2,9 @@ package com.example.Broodjes;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
-import java.time.chrono.ChronoLocalDate;
-import java.time.chrono.ChronoLocalDateTime;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class BestellingService {
@@ -40,7 +33,7 @@ public class BestellingService {
         List<Bestelling> bestellingStudent = bestellingRepository.findByStudentId(bestelling.getStudentId());
         int counter = 0;
         for(Bestelling bestelItem:bestellingStudent){
-            if(bestelItem.getBetaald().equals(false)&&bestelItem.getLeverdatum().isBefore(LocalDate.now())){
+            if(bestelItem.getBetaald().equals(false)&&bestelItem.getLeverDatum().isBefore(LocalDate.now())){
                 counter++;
             }
         }
