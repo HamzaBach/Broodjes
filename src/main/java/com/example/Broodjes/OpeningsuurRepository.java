@@ -10,12 +10,6 @@ import java.util.Optional;
 
 public interface OpeningsuurRepository extends JpaRepository<Openingsuur, Long> {
 
-//Query openingsuren huidige dag oproepen aanmaken
-/*
-    @Query("SELECT * FROM Openingsuur WHERE dag = ?1")
-    Optional<Openingsuur> OpeningsUrenVandaag(String dag);
-*/
     List<Openingsuur> findByDag(int dag);
-    //List<Openingsuur> findByTime(LocalTime currentTime);
 
 }

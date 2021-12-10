@@ -1,9 +1,6 @@
 package com.example.Broodjes;
 
 
-
-
-
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -25,8 +22,7 @@ public class Bestelling {
     private Boolean betaald;
     private LocalDate leverDatum;
 
-    public Bestelling(Long bestelId, Long broodjeId, Long studentId, LocalDate bestellingsDatum, double prijs, boolean betaald, LocalDate leverDatum)
-    {
+    public Bestelling(Long bestelId, Long broodjeId, Long studentId, LocalDate bestellingsDatum, double prijs, boolean betaald, LocalDate leverDatum) {
         this.bestelId = bestelId;
         this.broodjeId = broodjeId;
         this.studentId = studentId;
@@ -37,10 +33,12 @@ public class Bestelling {
 
     }
 
-    public Bestelling(){};
+    public Bestelling() {
+    }
 
-    public Bestelling(Long broodjeId, Long studentId, LocalDate bestellingsDatum, double prijs, boolean betaald, LocalDate leverDatum)
-    {
+    ;
+
+    public Bestelling(Long broodjeId, Long studentId, LocalDate bestellingsDatum, double prijs, boolean betaald, LocalDate leverDatum) {
 
         this.broodjeId = broodjeId;
         this.studentId = studentId;

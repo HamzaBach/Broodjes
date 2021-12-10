@@ -28,8 +28,7 @@ public class OpeningsuurService {
         List<Openingsuur> isItOpen = getOpeningsUren();
         if(isItOpen.equals(null)){
             return false;
-        }
-        return true;
+        }else {return true;}
     }
 
     public List<Openingsuur> getOpeningsUren(){
