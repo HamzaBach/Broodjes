@@ -23,7 +23,7 @@ public class OpeningsuurController {
         return openingsuurService.getOpeningsUren();
     }
 
-    @GetMapping(path = {"today"})
+    @GetMapping(path = "{today}")
     public Boolean websiteAvailability() {
         return openingsuurService.websiteAvailability();
     }

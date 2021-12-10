@@ -26,7 +26,7 @@ public class OpeningsuurService {
 
     public Boolean websiteAvailability(){
         List<Openingsuur> isItOpen = getOpeningsUren();
-        if(isItOpen.equals(null)){
+        if(isItOpen.isEmpty()){
             return false;
         }else {return true;}
     }
@@ -41,9 +41,6 @@ public class OpeningsuurService {
             if(levertijd.getOpeningVan().isBefore(currentTime)&&levertijd.getOpeningTot().isAfter(currentTime)){
                 openingHoursNow.add(levertijd);
             }
-        }
-        if(openingHoursNow.isEmpty()){
-            return null;
         }
             return openingHoursNow;
     }
