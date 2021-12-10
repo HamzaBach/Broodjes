@@ -20,34 +20,34 @@ public class Bestelling {
     private Long bestelId;
     private Long broodjeId;
     private Long studentId;
-    private LocalDate bestelling;
+    private LocalDate bestellingsDatum;
     private Double prijs;
     private Boolean betaald;
-    private LocalDate leverdatum;
+    private LocalDate leverDatum;
 
-    public Bestelling(Long bestelId, Long broodjeId, Long studentId, LocalDate bestelling, double prijs, boolean betaald, LocalDate leverdatum)
+    public Bestelling(Long bestelId, Long broodjeId, Long studentId, LocalDate bestellingsDatum, double prijs, boolean betaald, LocalDate leverDatum)
     {
         this.bestelId = bestelId;
         this.broodjeId = broodjeId;
         this.studentId = studentId;
-        this.bestelling = bestelling;
+        this.bestellingsDatum = bestellingsDatum;
         this.prijs = prijs;
         this.betaald = betaald;
-        this.leverdatum = leverdatum;
+        this.leverDatum = leverDatum;
 
     }
 
     public Bestelling(){};
 
-    public Bestelling( Long broodjeId, Long studentId, LocalDate bestelling, double prijs, boolean betaald, LocalDate leverdatum)
+    public Bestelling(Long broodjeId, Long studentId, LocalDate bestellingsDatum, double prijs, boolean betaald, LocalDate leverDatum)
     {
 
         this.broodjeId = broodjeId;
         this.studentId = studentId;
-        this.bestelling = bestelling;
+        this.bestellingsDatum = bestellingsDatum;
         this.prijs = prijs;
         this.betaald = betaald;
-        this.leverdatum = leverdatum;
+        this.leverDatum = leverDatum;
 
     }
 
@@ -75,12 +75,12 @@ public class Bestelling {
         this.studentId = studentId;
     }
 
-    public LocalDate getBestelling() {
-        return bestelling;
+    public LocalDate getBestellingsDatum() {
+        return bestellingsDatum;
     }
 
-    public void setBestelling(LocalDate bestelling) {
-        this.bestelling = bestelling;
+    public void setBestellingsDatum(LocalDate bestellingsDatum) {
+        this.bestellingsDatum = bestellingsDatum;
     }
 
     public Double getPrijs() {
@@ -99,11 +99,11 @@ public class Bestelling {
         this.betaald = betaald;
     }
 
-    public LocalDate getLeverdatum() {
-        return leverdatum;
+    public LocalDate getLeverDatum() {
+        return leverDatum;
     }
 
-    public void setLeverdatum(LocalDate leverdatum) {
-        this.leverdatum = leverdatum;
+    public void setLeverDatum(LocalDate leverDatum) {
+        this.leverDatum = leverDatum;
     }
 }

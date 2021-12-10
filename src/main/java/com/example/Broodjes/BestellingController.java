@@ -25,9 +25,19 @@ public class BestellingController {
         return bestellingService.getBestellingStudent(studentId);
     }
 
-    @PostMapping(path = "{studentId}")
-    public void addBestelling(@RequestBody Bestelling bestelling){
-        bestellingService.addBestelling(bestelling);
+    @GetMapping(path="{studentId}/schuldsaldo")
+    public Double getSchuldSaldo(@PathVariable("studentId") Long studentId){
+        return bestellingService.getSchuldSaldo(studentId);
+    }
+
+    @GetMapping(path="{studentId}/canIOrder")
+    public Boolean canIOrder(@PathVariable("studentId") Long studentId){
+        return bestellingService.canIOrder(studentId);
+    }
+
+    @PostMapping(path = "{studentId}/{broodjeId}")
+    public void addBestelling(@PathVariable("studentId") Long studentId, @PathVariable("broodjeId")Long broodjeId ){
+        bestellingService.addBestelling(studentId, broodjeId);
     }
 
 
