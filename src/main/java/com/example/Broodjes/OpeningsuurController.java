@@ -9,22 +9,22 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(path="api/v1/openingsuur")
+@RequestMapping(path = "api/v1/openingsuur")
 public class OpeningsuurController {
     private final OpeningsuurService openingsuurService;
 
     @Autowired
-    public OpeningsuurController(OpeningsuurService openingsuurService){
+    public OpeningsuurController(OpeningsuurService openingsuurService) {
         this.openingsuurService = openingsuurService;
     }
 
     @GetMapping
-    public List<Openingsuur> getOpeningsuren(){
+    public List<Openingsuur> getOpeningsuren() {
         return openingsuurService.getOpeningsUren();
     }
 
     @GetMapping(path = {"today"})
-    public Boolean websiteAvailability(){
+    public Boolean websiteAvailability() {
         return openingsuurService.websiteAvailability();
     }
 

@@ -23,30 +23,39 @@ public class Openingsuur {
     public int getDag() {
         return dag;
     }
+
     public void setDag(int dag) {
         this.dag = dag;
     }
+
     public Long getOpeningsuurId() {
         return openingsuurId;
     }
+
     public void setOpeningsuurId(Long openingsuurId) {
         this.openingsuurId = openingsuurId;
     }
+
     public LocalTime getOpeningVan() {
         return openingVan;
     }
+
     public void setOpeningVan(LocalTime openingVan) {
         this.openingVan = openingVan;
     }
+
     public LocalTime getOpeningTot() {
         return openingTot;
     }
+
     public void setOpeningTot(LocalTime openingTot) {
         this.openingTot = openingTot;
     }
+
     public int getDagenTotLevering() {
         return dagenTotLevering;
     }
+
     public void setDagenTotLevering(int dagenTotLevering) {
         this.dagenTotLevering = dagenTotLevering;
     }
@@ -58,6 +67,7 @@ public class Openingsuur {
         this.dag = dag;
         this.dagenTotLevering = dagenTotLevering;
     }
+
     public Openingsuur(LocalTime openingsVan, LocalTime openingTot, int dag, int dagenTotLevering) {
         this.openingVan = openingsVan;
         this.openingTot = openingTot;
@@ -65,5 +75,6 @@ public class Openingsuur {
         this.dagenTotLevering = dagenTotLevering;
     }
 
-    public Openingsuur(){}
+    public Openingsuur() {
+    }
 }

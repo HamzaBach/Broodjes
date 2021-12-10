@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(path="api/v1/student")
+@RequestMapping(path = "api/v1/student")
 public class StudentController {
     private final StudentService studentService;
 
@@ -21,13 +21,8 @@ public class StudentController {
     }
 
     @GetMapping
-    public List<Student> getStudenten(){
+    public List<Student> getStudenten() {
         return studentService.getStudenten();
-    }
-
-    @GetMapping(path = "{studentId}")
-    public Double getSchuld(@PathVariable("studentId") Long studentId){
-        return studentService.schuld(studentId);
     }
 
 }

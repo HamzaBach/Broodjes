@@ -14,12 +14,12 @@ public class BroodjeController {
     private final BroodjeService broodjeService;
 
     @Autowired
-    public BroodjeController (BroodjeService broodjeService){
-        this.broodjeService=broodjeService;
+    public BroodjeController(BroodjeService broodjeService) {
+        this.broodjeService = broodjeService;
     }
 
     @GetMapping
-    public List<Broodje> getBroodjes(){
+    public List<Broodje> getBroodjes() {
         return broodjeService.getBroodjes();
     }
 }

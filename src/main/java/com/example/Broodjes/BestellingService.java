@@ -63,38 +63,32 @@ public class BestellingService {
                     bestellingRepository.save(besteldeBroodje);
                 }
             }
-
-
-//            if (besteldeBroodje.getLeverDatum().equals(null)) {
-//                return false;
-            }
-            return true;
-
         }
-
-        public Boolean canIOrder (Long studentId){
-            List<Bestelling> bestellingsHistoriekStudent=getBestellingStudent(studentId);
-            for(Bestelling bestelitem:bestellingsHistoriekStudent){
-                if(bestelitem.getLeverDatum().isBefore(LocalDate.now())){
-                    return false;
-                }
-            }
         return true;
-        }
 
-        public Double getSchuldSaldo(Long studentId){
-                List<Bestelling> bestellingsHistoriekStudent=getBestellingStudent(studentId);
-                Double schuldSaldo=0.0;
-                for(Bestelling bestelitem:bestellingsHistoriekStudent){
-                    if(bestelitem.getBetaald().equals(false)){
-                        schuldSaldo+=bestelitem.getPrijs();
-                    }
-                }
-                return schuldSaldo;
-        }
     }
 
+    public Boolean canIOrder(Long studentId) {
+        List<Bestelling> bestellingsHistoriekStudent = getBestellingStudent(studentId);
+        for (Bestelling bestelitem : bestellingsHistoriekStudent) {
+            if (bestelitem.getLeverDatum().isBefore(LocalDate.now())) {
+                return false;
+            }
+        }
+        return true;
+    }
 
+    public Double getSchuldSaldo(Long studentId) {
+        List<Bestelling> bestellingsHistoriekStudent = getBestellingStudent(studentId);
+        Double schuldSaldo = 0.0;
+        for (Bestelling bestelitem : bestellingsHistoriekStudent) {
+            if (bestelitem.getBetaald().equals(false)) {
+                schuldSaldo += bestelitem.getPrijs();
+            }
+        }
+        return schuldSaldo;
+    }
+}
 
 
 //}
