@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(path="api/v1/Openingsuur")
+@RequestMapping(path="api/v1/openingsuur")
 public class OpeningsuurController {
     private final OpeningsuurService openingsuurService;
 
@@ -21,6 +21,11 @@ public class OpeningsuurController {
     @GetMapping
     public List<Openingsuur> getOpeningsuren(){
         return openingsuurService.getOpeningsUren();
+    }
+
+    @GetMapping(path = {"today"})
+    public Boolean websiteAvailability(){
+        return openingsuurService.websiteAvailability();
     }
 
 

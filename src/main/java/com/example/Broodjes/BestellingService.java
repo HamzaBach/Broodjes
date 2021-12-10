@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.chrono.ChronoLocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
@@ -39,12 +40,10 @@ public class BestellingService {
     }
 
     public Boolean addBestelling(Long studentId, Long broodjeId) {
-
         int currentDay = LocalDateTime.now().getDayOfWeek().getValue();//Mon=1, Tue=2, Wed=3, Thu=4, Fri=5, Sat=6, Sun=7
         if (openingsuurRepository.findByDag(currentDay).equals(null)) {//bv zaterdag gesloten
             return false;
         } else {
-
             Bestelling besteldeBroodje = new Bestelling();
             Optional<Broodje> gekozenBroodje = broodjeRepository.findById(broodjeId);
 
@@ -53,23 +52,45 @@ public class BestellingService {
             besteldeBroodje.setBestellingsDatum(LocalDate.now());
             besteldeBroodje.setPrijs(gekozenBroodje.get().getPrice());
             besteldeBroodje.setBetaald(false);
-            //Logica om leverdatum te bepalen:
-
+            //Logica om huidige dag en tijd te bepalen:
             LocalTime currentTime = LocalDateTime.now().toLocalTime().truncatedTo(ChronoUnit.NANOS); //HH:mm:ss
             List<Openingsuur> openingsUurVandaag = openingsuurRepository.findByDag(currentDay);
+
+            //Logica om leverdatum vast te leggen.
             for (Openingsuur bestelTijd : openingsUurVandaag) {
                 if (bestelTijd.getOpeningVan().isBefore(currentTime) && bestelTijd.getOpeningTot().isAfter(currentTime)) {
                     besteldeBroodje.setLeverDatum(LocalDate.now().plusDays(bestelTijd.getDagenTotLevering()));//leverdatum toegevoegd aan besteldBroodje
                     bestellingRepository.save(besteldeBroodje);
-                } else if(!(bestelTijd.getOpeningVan().isBefore(currentTime) && bestelTijd.getOpeningTot().isAfter(currentTime))){
-                    return false;//BUG ZIT HIER!!!!!!!!
                 }
             }
+
+
 //            if (besteldeBroodje.getLeverDatum().equals(null)) {
 //                return false;
             }
             return true;
 
+        }
+
+        public Boolean canIOrder (Long studentId){
+            List<Bestelling> bestellingsHistoriekStudent=getBestellingStudent(studentId);
+            for(Bestelling bestelitem:bestellingsHistoriekStudent){
+                if(bestelitem.getLeverDatum().isBefore(LocalDate.now())){
+                    return false;
+                }
+            }
+        return true;
+        }
+
+        public Double getSchuldSaldo(Long studentId){
+                List<Bestelling> bestellingsHistoriekStudent=getBestellingStudent(studentId);
+                Double schuldSaldo=0.0;
+                for(Bestelling bestelitem:bestellingsHistoriekStudent){
+                    if(bestelitem.getBetaald().equals(false)){
+                        schuldSaldo+=bestelitem.getPrijs();
+                    }
+                }
+                return schuldSaldo;
         }
     }
 

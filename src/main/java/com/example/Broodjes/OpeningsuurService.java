@@ -24,6 +24,14 @@ public class OpeningsuurService {
         this.openingsuurRepository = openingsuurRepository;
     }
 
+    public Boolean websiteAvailability(){
+        List<Openingsuur> isItOpen = getOpeningsUren();
+        if(isItOpen.equals(null)){
+            return false;
+        }
+        return true;
+    }
+
     public List<Openingsuur> getOpeningsUren(){
         int currentDay = LocalDateTime.now().getDayOfWeek().getValue();//Mon=1, Tue=2, Wed=3, Thu=4, Fri=5, Sat=6, Sun=7
         LocalTime currentTime=LocalDateTime.now().toLocalTime().truncatedTo(ChronoUnit.NANOS); //HH:mm:ss
@@ -35,7 +43,7 @@ public class OpeningsuurService {
                 openingHoursNow.add(levertijd);
             }
         }
-        if(openingHoursNow.isEmpty()||openingHoursToday.isEmpty()){
+        if(openingHoursNow.isEmpty()){
             return null;
         }
             return openingHoursNow;
