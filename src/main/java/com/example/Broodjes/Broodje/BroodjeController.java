@@ -1,4 +1,4 @@
-package com.example.Broodjes;
+package com.example.Broodjes.Broodje;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

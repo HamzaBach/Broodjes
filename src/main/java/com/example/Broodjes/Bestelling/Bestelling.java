@@ -1,4 +1,4 @@
-package com.example.Broodjes;
+package com.example.Broodjes.Bestelling;
 
 
 import javax.persistence.*;
