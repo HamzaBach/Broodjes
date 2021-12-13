@@ -72,7 +72,7 @@ public class BestellingService {
     public Boolean canIOrder(Long studentId) {
         List<Bestelling> bestellingsHistoriekStudent = getBestellingStudent(studentId);
         for (Bestelling bestelitem : bestellingsHistoriekStudent) {
-            if (bestelitem.getLeverDatum().isBefore(LocalDate.now())) {
+            if (bestelitem.getLeverDatum().isBefore(LocalDate.now())&&bestelitem.getBetaald().equals(false)) {
                 return false;
             }
         }
