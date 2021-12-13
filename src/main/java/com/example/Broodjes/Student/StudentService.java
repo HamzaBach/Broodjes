@@ -1,9 +1,8 @@
-package com.example.Broodjes;
+package com.example.Broodjes.Student;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @Service

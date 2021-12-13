@@ -1,4 +1,4 @@
-package com.example.Broodjes;
+package com.example.Broodjes.Openingsuur;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
